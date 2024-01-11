@@ -1,0 +1,7 @@
+{
+  "name": "phobos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

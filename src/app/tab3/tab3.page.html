@@ -1,0 +1,123 @@
+<ion-content [fullscreen]="true">
+
+  <body
+    style="background: url('./assets/wall.jpg'); background-size: cover; background-position: center center; position: fixed; width: 100%; height: 100%; overflow-y: scroll;">
+    <br>
+    <h2 style="margin-left: 20px;"><b>Form Calon Mahasiswa</b></h2>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="auto">
+          <div style="width: 120px; text-align: right; margin-top: 16px; font-size: 16px;"><b>Nama Lengkap</b></div>
+        </ion-col>
+        <ion-col>
+          <ion-input [(ngModel)]="nama" style="background-color: white; border-radius: 3px;" label="Nama Lengkap"
+            label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="auto">
+          <div style="width: 120px; text-align: right; margin-top: 16px; font-size: 16px;"><b>Jenis Kelamin</b></div>
+        </ion-col>
+        <ion-col>
+          <ion-select [(ngModel)]="jenis_kelamin" style="background-color: white; border-radius: 3px;"
+            label="Pilih Jenis Kelamin" label-placement="floating" fill="outline">
+            <ion-select-option value="laki-laki">Laki-laki</ion-select-option>
+            <ion-select-option value="perempuan">Perempuan</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="auto">
+          <div style="width: 120px; text-align: right; margin-top: 16px; font-size: 16px;"><b>No. Handphone</b></div>
+        </ion-col>
+        <ion-col>
+          <ion-input [(ngModel)]="nomor" style="background-color: white; border-radius: 3px;" label="No. Handphone"
+            label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="auto">
+          <div style="width: 120px; text-align: right; margin-top: 16px; font-size: 16px;"><b>Email</b></div>
+        </ion-col>
+        <ion-col>
+          <ion-input [(ngModel)]="email" style="background-color: white; border-radius: 3px;" label="Alamat Email"
+            label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="auto">
+          <div style="width: 120px; text-align: right; margin-top: 16px; font-size: 16px;"><b>Asal Sekolah</b></div>
+        </ion-col>
+        <ion-col>
+          <ion-input [(ngModel)]="asal_sekolah" style="background-color: white; border-radius: 3px;"
+            label="Asal Sekolah" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="auto">
+          <div style="width: 120px; text-align: right; margin-top: 16px; font-size: 16px;"><b>Program Studi</b></div>
+        </ion-col>
+        <ion-col>
+          <ion-select [(ngModel)]="prodi" style="background-color: white; border-radius: 3px;"
+            label="Pilih Program Studi" label-placement="floating" fill="outline">
+            <ion-select-option value="Sistem Informasi">Sistem Informasi</ion-select-option>
+            <ion-select-option value="Teknik Informatika">Teknik Informatika</ion-select-option>
+            <ion-select-option value="Teknik Informasi">Teknik Informasi</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="auto">
+          <div style="width: 120px; text-align: right; margin-top: 16px; font-size: 16px;"><b>Jenjang</b></div>
+        </ion-col>
+        <ion-col>
+          <ion-select [(ngModel)]="jenjang" style="background-color: white; border-radius: 3px;" label="Pilih Jenjang"
+            label-placement="floating" fill="outline">
+            <ion-select-option value="S1">S1</ion-select-option>
+            <ion-select-option value="D3">D3</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="auto">
+          <div style="width: 120px; text-align: right; margin-top: 16px; font-size: 16px;"><b>Kelas</b></div>
+        </ion-col>
+        <ion-col>
+          <ion-select [(ngModel)]="kelas" style="background-color: white; border-radius: 3px;" label="Pilih Kelas"
+            label-placement="floating" fill="outline">
+            <ion-select-option value="A">A</ion-select-option>
+            <ion-select-option value="B">B</ion-select-option>
+            <ion-select-option value="C">C</ion-select-option>
+            <ion-select-option value="D">D</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="auto">
+          <div style="width: 120px; text-align: right; margin-top: 16px; font-size: 16px;"><b>Info Kampus</b></div>
+        </ion-col>
+        <ion-col>
+          <ion-select [(ngModel)]="info" style="background-color: white; border-radius: 3px;" label="Pilih Info Kampus"
+            label-placement="floating" fill="outline">
+            <ion-select-option value="Mahasiswa">Mahasiswa</ion-select-option>
+            <ion-select-option value="Dosen">Dosen</ion-select-option>
+            <ion-select-option value="Teman">Teman</ion-select-option>
+            <ion-select-option value="Keluarga">Keluarga</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="margin-left: 130px;">
+          <button (click)="addData()" type="button" class="btn btn-outline-danger">Daftar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </body>
+  <style>
+    @media only screen and (max-width: 600px) {
+      body {
+        background-size: contain;
+      }
+    }
+  </style>
+</ion-content>

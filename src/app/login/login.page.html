@@ -1,0 +1,22 @@
+<ion-content [fullscreen]="true">
+
+  <body>
+    <div class="container-fluid bg">
+      <div class="form-container">
+        <div class="row">
+          <h1><b> Please Login</b></h1>
+          <div>
+            <br>
+          </div>
+          <label><b>Username</b></label>
+          <input type="text" class="form-control" [(ngModel)]="username" placeholder="Username">
+          <div><br></div>
+          <label><b>Password</b></label>
+          <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password">
+          <div><br></div>
+          <button type="submit" class="btn btn-success btn-block" (click)="login()">Login</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</ion-content>

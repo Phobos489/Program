@@ -1,0 +1,55 @@
+<ion-content [fullscreen]="true">
+
+  <body
+    style="background: url('./assets/wall.jpg'); background-size: cover; background-position: center center; position: fixed; width: 100%; height: 100%; overflow-y: scroll;">
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <br>
+    <h2 style="margin-left: 20px;"><b>Data Calon Mahasiswa</b></h2>
+    <ion-searchbar style="background: transparent;" [(ngModel)]="searchTerm" (ionInput)="onSearchInput($event)"
+      (ionClear)="resetData()"></ion-searchbar>
+    <br>
+    <ion-grid [fixed]="true" class="container">
+      <ion-row style="border-bottom: solid 1px black; text-align: center;">
+        <ion-col size="1.4"><b>Reg ID</b></ion-col>
+        <ion-col size="3"><b>Nama</b></ion-col>
+        <ion-col size="3.3"><b>Program Studi</b></ion-col>
+        <ion-col size="3.6"><b>Status</b></ion-col>
+      </ion-row>
+      <ion-row *ngFor="let tbl_mhs_rio of mahasiswaData;" style="border-bottom: solid 1px black;">
+        <ion-col size="1.4">{{tbl_mhs_rio.id}}</ion-col>
+        <ion-col size="3">{{tbl_mhs_rio.nama}}</ion-col>
+        <ion-col size="3.3">{{tbl_mhs_rio.prodi}}</ion-col>
+        <ion-col size="3.6">
+          <span [ngClass]="{'bg-red': tbl_mhs_rio.status === '0', 'bg-green': tbl_mhs_rio.status === '1'}">
+            {{tbl_mhs_rio.status === '0' ? 'Menunggu Verifikasi' : 'Terverifikasi'}}
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </body>
+  <style>
+    @media only screen and (max-width: 600px) {
+      body {
+        background-size: contain;
+      }
+    }
+
+    .bg-red {
+      background-color: red;
+      padding: 3px;
+      border-radius: 5px;
+      color: white;
+      text-align: center;
+    }
+
+    .bg-green {
+      background-color: green;
+      padding: 3px;
+      border-radius: 5px;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</ion-content>
